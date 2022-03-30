@@ -1,6 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import TabPage from '../components/TabPage.vue'
+</script>
+
 <template>
-  <div>Hello</div>
-  <router-link to="test">test</router-link>
+  <TabPage />
 </template>
 <style scoped></style>
