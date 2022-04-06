@@ -1,6 +1,7 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Layout from '../components/Layout/Layout.vue'
+</script>
 <template>
-  <div>Hello</div>
-  <router-link to="test">test</router-link>
+  <Layout> </Layout>
 </template>
 <style scoped></style>

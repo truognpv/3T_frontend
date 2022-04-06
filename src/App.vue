@@ -11,3 +11,8 @@ import { NETWORKS } from './constants'
     <router-view />
   </Web3Provider>
 </template>
+<style>
+#app {
+  font-family: 'Kanit', sans-serif;
+}
+</style>
