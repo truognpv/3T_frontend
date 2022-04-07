@@ -25,7 +25,10 @@ const mouseoverList = ref(false)
           <circle cx="19" cy="12" r="1" />
         </svg>
       </button>
-      <div class="border rounded-xl w-[280px] list" v-if="mouseoverList">
+      <div
+        class="border rounded-xl w-[280px] list z-[9999]"
+        v-if="mouseoverList"
+      >
         <router-link to="/"
           ><h1 class="hover:rounded-t-2xl">Info</h1>
         </router-link>

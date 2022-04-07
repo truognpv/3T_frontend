@@ -10,7 +10,7 @@ const isActive = ref(false)
       <div class="flex gap-10">
         <div class="flex flex-col items-center justify-center">
           <h1>Round</h1>
-          <h2>All</h2>
+          <h2>Collected</h2>
         </div>
         <div class="flex flex-col items-center justify-center">
           <h1>Your Result</h1>
@@ -152,8 +152,4 @@ const isActive = ref(false)
   </div>
 </template>
 
-<style scoped>
-.is-active {
-  height: 100%;
-}
-</style>
+<style scoped></style>

@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="relative flex items-center justify-between w-32 h-8 p-1 bg-white rounded-2xl"
+    class="flex items-center justify-between w-32 h-8 p-1 bg-white rounded-2xl"
   >
     <button class="next">
       <svg
@@ -18,7 +18,7 @@
         ></path>
       </svg>
     </button>
-    <div class="absolute left-8">
+    <div>
       <svg
         viewBox="0 0 64 64"
         width="64px"

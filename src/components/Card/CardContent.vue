@@ -12,7 +12,7 @@ const bgColor = computed(() => {
 </script>
 <template>
   <div class="p-1 rounded-2xl" :class="bgColor">
-    <div class="flex flex-col w-full p-4 my-auto bg-white rounded-2xl">
+    <div class="flex flex-col p-4 my-auto bg-white rounded-2xl">
       <h1 class="mb-2">{{ status }}</h1>
       <div class="flex justify-between mb-4">
         <h1>$450</h1>

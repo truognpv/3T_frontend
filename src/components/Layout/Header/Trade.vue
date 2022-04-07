@@ -4,9 +4,12 @@ import TitleMenuList from './TitleMenuList.vue'
 
 <template>
   <TitleMenuList url="swap" title="Trade">
-    <router-link to="swap">
-      <h1 class="page hover:rounded-t-2xl">Swap</h1>
-    </router-link>
+    <div class="pt-1">
+      <router-link to="swap">
+        <h1 class="page hover:rounded-t-2xl">Swap</h1>
+      </router-link>
+    </div>
+
     <router-link to="limit"><h1 class="page">Limit</h1></router-link>
     <router-link to="swap"><h1 class="page">Liquidity</h1> </router-link>
     <a href="#">

@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import FilterAll from './Filter/FilterAll.vue'
 import { ref } from 'vue'
+import Collected from './Filter/Collected.vue'
+import UnCollected from './Filter/UnCollected.vue'
+import Yourhistory from './Yourhistory.vue'
+const isBg = ref(true)
 
-const isClose = ref(false)
-
-function onClose() {
-  isClose.value = !isClose.value
-}
+const isFilter = ref('all')
 </script>
 
 <template>
   <div class="flex justify-end">
-    <div :class="{ history: isClose }" class="w-full">
-      <div class="flex items-center justify-between">
+    <div class="w-96 hde">
+      <div class="flex items-center justify-between mb-4">
         <h1>History</h1>
-        <button class="flex" @click="onClose">
+        <button class="flex" @click="$emit('onClose')">
           Close
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,39 +36,57 @@ function onClose() {
         </button>
       </div>
 
-      <div class="flex justify-between border-2 items-centers rounded-2xl">
-        <button class="w-1/2 text-center rounds">Rounds</button>
-        <button class="w-1/2 text-center PNL">PNL</button>
+      <div class="flex justify-between mb-4 border-2 items-centers rounded-2xl">
+        <button
+          class="w-1/2 text-center rounds"
+          :class="{ 'is-bg': isBg }"
+          @click="isBg = true"
+        >
+          Rounds
+        </button>
+        <button
+          class="w-1/2 text-center PNL"
+          :class="{ 'is-bg': !isBg }"
+          @click="isBg = false"
+        >
+          PNL
+        </button>
       </div>
 
-      <div>
-        <h1>Filter</h1>
-        <div class="flex">
-          <label class="radiolist">
+      <div v-if="isBg === true">
+        <small class="mb-2">Filter</small>
+        <div class="flex gap-5">
+          <label class="radiolist" @click="isFilter = 'all'">
             <input type="radio" name="history" checked />
             <div>All</div>
           </label>
-          <label class="radiolist">
+          <label class="radiolist" @click="isFilter = 'collected'">
             <input type="radio" name="history" />
             <div>Collected</div>
           </label>
-          <label class="radiolist">
+          <label class="radiolist" @click="isFilter = 'uncollected'">
             <input type="radio" name="history" />
             <div>Uncollected</div>
           </label>
         </div>
-
-        <FilterAll />
       </div>
     </div>
+  </div>
+  <div v-if="isBg === true">
+    <FilterAll v-if="isFilter === 'all'" />
+    <Collected v-if="isFilter === 'collected'" />
+    <UnCollected v-if="isFilter === 'uncollected'" />
+  </div>
+  <div v-if="isBg === false">
+    <Yourhistory />
   </div>
 </template>
 
 <style scoped>
 .rounds,
 .PNL {
-  background-color: rgb(122, 110, 170);
   border-radius: 16px;
+  padding: 6px;
 }
 
 .radiolist {
@@ -77,16 +95,17 @@ function onClose() {
   align-items: center;
 }
 
-.history {
-  animation: close 3s forwards linear;
-  overflow: hidden;
+.hde {
+  background: linear-gradient(
+    139.73deg,
+    rgb(229, 253, 255) 0%,
+    rgb(243, 239, 255) 100%
+  );
+  padding: 16px;
 }
-@keyframes close {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-  }
+
+.is-bg {
+  background-color: rgb(122, 110, 170);
+  color: rgb(255, 255, 255);
 }
 </style>

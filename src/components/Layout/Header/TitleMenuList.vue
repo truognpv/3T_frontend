@@ -13,7 +13,7 @@ const mouseoverList = ref(false)
       <div class="relative">
         <h1 class="hover:bg-[#eff4f5] hover:rounded-2xl p-4">{{ title }}</h1>
         <div
-          class="border rounded-xl w-[280px] absolute list"
+          class="border rounded-xl w-[280px] absolute z-[999] list"
           v-if="mouseoverList"
         >
           <slot />

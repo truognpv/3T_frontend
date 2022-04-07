@@ -10,7 +10,7 @@ const isActive = computed(() => {
 </script>
 
 <template>
-  <div class="flex justify-center gap-10">
+  <div class="flex justify-center gap-10 p-0 border-y-2">
     <router-link to="competition" class="nav_page"
       >Trading Competition</router-link
     >
@@ -50,7 +50,8 @@ const isActive = computed(() => {
   width: 100%;
 }
 .nav_page {
-  padding: 4px 4px 0px;
+  padding: 8px 4px 0px;
+  height: 42px;
 }
 
 .nav_page:hover {

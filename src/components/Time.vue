@@ -153,7 +153,7 @@ import CountdownTime from './CountdownTime.vue'
         </a>
       </div>
 
-      <button class="history">
+      <button class="history" @click="$emit('onClose')">
         <svg
           viewBox="0 0 24 24"
           width="24px"

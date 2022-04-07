@@ -8,9 +8,8 @@ import LaterCard from './Card/LaterCard.vue'
 </script>
 
 <template>
-  <div>
+  <div class="z-1">
     <swiper
-      class="w-full"
       :slides-per-view="3"
       :centered-slides="true"
       :mousewheel="true"
