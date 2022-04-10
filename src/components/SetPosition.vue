@@ -105,7 +105,7 @@
   padding: 0px 24px;
   background-color: rgb(31, 199, 212);
   color: white;
-  width: 85%;
+  width: 100%;
 }
 
 .is-flip {

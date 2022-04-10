@@ -9,12 +9,7 @@ import LaterCard from './Card/LaterCard.vue'
 
 <template>
   <div class="z-1">
-    <swiper
-      :slides-per-view="3"
-      :centered-slides="true"
-      :mousewheel="true"
-      :space-between="16"
-    >
+    <swiper :slides-per-view="3" :centered-slides="true" :mousewheel="true">
       <swiper-slide style="width: 320px">
         <ExpiredCardVue />
       </swiper-slide>

@@ -12,7 +12,6 @@ const isClose = ref(false)
 
 function onClose() {
   isClose.value = !isClose.value
-  console.log(isClose.value)
 }
 </script>
 
@@ -71,9 +70,11 @@ function onClose() {
         </div>
         <div><Carousel /></div>
       </div>
-      <div class="history" :class="{ close: isClose }">
-        <History @on-close="onClose" />
-      </div>
+      <Transition name="show">
+        <div class="history" v-if="isClose">
+          <History @on-close="onClose" />
+        </div>
+      </Transition>
     </div>
   </Layout>
 </template>
@@ -95,17 +96,24 @@ function onClose() {
   overflow: hidden;
   width: 384px;
 }
-.close {
-  animation: jzdc 500ms ease forwards;
+
+.show-enter-from {
+  width: 0px;
+}
+.show-enter-to {
   width: 384px;
 }
+.show-enter-active {
+  transition: all 1s ease;
+}
 
-@keyframes jzdc {
-  0% {
-    width: 384px;
-  }
-  100% {
-    width: 0%;
-  }
+.show-leave-from {
+  width: 384px;
+}
+.show-leave-to {
+  width: 0px;
+}
+.show-leave-active {
+  transition: all 1s ease;
 }
 </style>
